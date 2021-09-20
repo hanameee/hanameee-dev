@@ -14,10 +14,6 @@ const Bio = () => {
     query BioQuery {
       site {
         siteMetadata {
-          author {
-            name
-            summary
-          }
           social {
             twitter
           }
@@ -26,8 +22,6 @@ const Bio = () => {
     }
   `)
 
-  // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
   return (
@@ -36,21 +30,19 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/profile-pic.png"
+        src="../images/lhn.png"
         width={50}
         height={50}
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && (
-        <p>
-          Written by <strong>{author.name}</strong> {author?.summary || null}
-          {` `}
-          <a href={`https://twitter.com/${social?.twitter || ``}`}>
-            You should follow them on Twitter
-          </a>
-        </p>
-      )}
+      <p>
+        해나미입니다. 웹 프론트엔드 개발자로 즐겁게 일하고 있습니다.
+        <br />
+        <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
+        {" | "}
+        <a href={`https://github.com/${social?.github || ``}`}>Github</a>
+      </p>
     </div>
   )
 }
