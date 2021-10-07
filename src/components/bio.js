@@ -16,6 +16,7 @@ const Bio = () => {
         siteMetadata {
           social {
             twitter
+            github
           }
         }
       }
@@ -37,11 +38,11 @@ const Bio = () => {
         alt="Profile picture"
       />
       <p>
-        해나미입니다. 웹 프론트엔드 개발자로 즐겁게 일하고 있습니다.
+        웹 프론트엔드 개발자 해남이의 기술 블로그
         <br />
-        <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
-        {" | "}
         <a href={`https://github.com/${social?.github || ``}`}>Github</a>
+        {" | "}
+        <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
       </p>
     </div>
   )
