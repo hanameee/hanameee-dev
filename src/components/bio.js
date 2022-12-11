@@ -2,7 +2,7 @@
  * Bio component that queries for data
  * with Gatsby's useStaticQuery component
  *
- * See: https://www.gatsbyjs.com/docs/use-static-query/
+ * See: https://www.gatsbyjs.com/docs/how-to/querying-data/use-static-query/
  */
 
 import * as React from "react"
@@ -14,15 +14,20 @@ const Bio = () => {
     query BioQuery {
       site {
         siteMetadata {
+          author {
+            name
+            summary
+          }
           social {
             twitter
-            github
           }
         }
       }
     }
   `)
 
+  // Set these values by editing "siteMetadata" in gatsby-config.js
+  const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
   return (
@@ -31,19 +36,21 @@ const Bio = () => {
         className="bio-avatar"
         layout="fixed"
         formats={["auto", "webp", "avif"]}
-        src="../images/lhn.png"
+        src="../images/profile-pic.png"
         width={50}
         height={50}
         quality={95}
         alt="Profile picture"
       />
-      <p>
-        웹 프론트엔드 개발자 해남이의 기술 블로그
-        <br />
-        <a href={`https://github.com/${social?.github || ``}`}>Github</a>
-        {" | "}
-        <a href={`https://twitter.com/${social?.twitter || ``}`}>Twitter</a>
-      </p>
+      {author?.name && (
+        <p>
+          Written by <strong>{author.name}</strong> {author?.summary || null}
+          {` `}
+          <a href={`https://twitter.com/${social?.twitter || ``}`}>
+            You should follow them on Twitter
+          </a>
+        </p>
+      )}
     </div>
   )
 }
