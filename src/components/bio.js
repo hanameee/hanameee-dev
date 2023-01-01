@@ -42,7 +42,7 @@ const Bio = () => {
         quality={95}
         alt="Profile picture"
       />
-      {author?.name && <p></p>}
+      {author?.name && <p>잘배잘만 - 잘 배워서 잘 만들자</p>}
     </div>
   )
 }
