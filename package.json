@@ -1,15 +1,16 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "hanameee.dev",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
+  "description": "Devlog written by hanameee",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "hanameee@gmail.com",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/hanameee/hanameee-dev/issues"
   },
   "dependencies": {
-    "@fontsource/merriweather": "^4.5.14",
+    "@fontsource/ibm-plex-sans-kr": "^4.5.12",
     "@fontsource/montserrat": "^4.5.13",
+    "@fontsource/noto-sans-kr": "^4.5.12",
     "gatsby": "^5.2.0",
     "gatsby-plugin-feed": "^5.2.0",
     "gatsby-plugin-image": "^3.2.0",
